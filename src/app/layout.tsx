@@ -18,13 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider>
           <Header />
-          <div style={{
-            maxWidth: 760,
-            margin: '0 auto',
-            padding: '40px 32px',
-            position: 'relative',
-            zIndex: 1,
-          }}>
+          <div className="page-shell">
             {children}
           </div>
         </ThemeProvider>

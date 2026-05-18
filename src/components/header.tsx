@@ -29,15 +29,7 @@ export function Header() {
       background: 'color-mix(in srgb, var(--background) 80%, transparent)',
       borderBottom: '1px solid var(--border)',
     }}>
-      <div style={{
-        maxWidth: 760,
-        margin: '0 auto',
-        padding: '0 32px',
-        height: 64,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-      }}>
+      <div className="header-inner">
         <Link href="/" style={{
           display: 'flex',
           alignItems: 'center',
@@ -69,7 +61,7 @@ export function Header() {
             <Link href="/" style={navStyle(pathname === '/')}>Home</Link>
             <Link href="/projects" style={navStyle(pathname === '/projects')}>Projects</Link>
           </nav>
-          <div style={{ width: 1, height: 24, background: 'var(--border)', margin: '0 6px' }} />
+          <div className="nav-divider" style={{ width: 1, height: 24, background: 'var(--border)', margin: '0 6px' }} />
           <ThemeToggle />
         </div>
       </div>

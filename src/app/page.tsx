@@ -15,34 +15,8 @@ const fade = {
 }
 
 /* ── Styles ────────────────────────────────────────── */
-const sectionStyle: React.CSSProperties = {
-  border: '1px solid var(--border)',
-  borderRadius: 14,
-  padding: '32px 28px',
-  marginTop: 16,
-  position: 'relative',
-  background: 'var(--card)',
-}
-
-const cornerMark: React.CSSProperties = {
-  position: 'absolute',
-  top: -7,
-  fontSize: 14,
-  color: 'var(--muted)',
-  opacity: 0.4,
-  fontFamily: 'var(--font-geist-mono), monospace',
-  lineHeight: 1,
-  userSelect: 'none',
-}
-
-const headingStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-geist-sans), system-ui, sans-serif',
-  fontSize: '1.7rem',
-  fontWeight: 300,
-  color: 'var(--muted)',
-  marginBottom: 20,
-  letterSpacing: '-0.02em',
-}
+/* Layout-critical styles live as responsive classes in globals.css:
+   .section-card, .section-heading, .hero-card, .hero-row, .projects-grid, etc. */
 
 const pillStyle: React.CSSProperties = {
   display: 'inline-flex',
@@ -84,7 +58,7 @@ const cardStyle: React.CSSProperties = {
 function Section({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   return (
     <motion.section
-      style={sectionStyle}
+      className="section-card"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-40px' }}
@@ -156,29 +130,30 @@ const experience = [
     role: 'AI Engineer',
     type: 'Full-time',
     period: '03.2026 – Present',
-    desc: 'Building Alpha Arena, a benchmark platform that evaluates how well frontier LLMs can trade real financial markets autonomously across US equities and crypto.',
-    tags: ['FastAPI', 'Next.js', 'PostgreSQL', 'LiteLLM', 'Alpaca'],
+    desc: 'Building and operating Raeth’s live LLM-agent arenas. Built Trader Arena, a public benchmark running 8 frontier LLMs autonomously across US equities, crypto, and Indian options on $100K paper accounts each, and IPL Arena, where Opus 4.7 and GPT-5.5 wager on IPL cricket against the Stake odds feed in real time. I develop and maintain Quant Arena and Prediction Arena end-to-end alongside them, four live arenas spanning trading, sports betting, and forecasting, plus Auction Arena for LLM live bidding. Shared infra: event-driven schedulers with cost and error caps, LiteLLM prompt-cache routing that cut tokens 40%, bootstrap CIs and permutation tests.',
+    tags: ['FastAPI', 'Next.js', 'PostgreSQL', 'Supabase', 'LiteLLM', 'Docker', 'Azure'],
   },
   {
     company: 'IIT Roorkee & University of Salford',
     role: 'Research Intern',
     type: 'Research',
     period: '10.2025 – Present',
-    desc: 'Multi-encoder scene text spotting with VLM recognition. Authored MEVL-STP — submitted to ECCV 2026.',
+    desc: 'Multi-encoder scene text spotting with VLM recognition. Authored MEVL-STP, submitted to ECCV 2026, and now extending the work to video text spotting (MEVL-VTS) for an IEEE Transactions submission.',
     tags: ['PyTorch', 'CLIP', 'DINOv2', 'Qwen3-VL', 'LoRA'],
   },
 ]
 
 const publications = [
-  { title: 'MEVL-STP: Multi-Encoder and VLM for Scene Text Spotting', venue: 'ECCV 2026', status: 'Submitted', link: 'https://github.com/doubleblind-afk/MEVL-STP' },
-  { title: 'Wildfire EWS: Multisensor Comparison Across Countries', venue: 'ISPRS Congress 2026', status: 'Accepted' },
+  { title: 'Multi-Encoder and VLM for Scene Text Spotting (MEVL-STP)', venue: 'ECCV 2026', status: 'Submitted', link: 'https://github.com/doubleblind-afk/MEVL-STP', desc: 'Combined 6 frozen vision encoders to find curved text in street images, then a LoRA-tuned Qwen3-VL-8B to read it. Beats prior SOTA on CTW1500 without synthetic data.' },
+  { title: 'Habitat Suitability Mapping using Satellite Imagery and CLI: A Case Study for New Brunswick, Canada', venue: 'ISPRS 2026', status: 'Accepted', desc: 'Combined Canada’s forest inventory with Sentinel-1/2 and Landsat, training MaxEnt and Random Forest models to predict where wildlife species can live across New Brunswick.' },
+  { title: 'Advancing Wildfire Early Warning Systems: A Multisensor and Predictive Modeling Comparison Across Countries', venue: 'ISPRS 2026', status: 'Accepted', desc: 'Scored 15 countries on a 0–5 scale for wildfire early-warning maturity from satellite coverage and prediction models.' },
 ]
 
 const projects = [
-  { title: 'Alpha Arena', desc: 'AI trading benchmark where frontier LLMs manage portfolios on real markets.', tags: ['FastAPI', 'Next.js', 'PostgreSQL', 'LiteLLM'] },
-  { title: 'Raeth Auction', desc: 'Live auction platform where LLM agents compete with strategic bidding.', tags: ['TypeScript', 'Next.js', 'Supabase', 'Docker'], link: 'https://github.com/magnusaman/raeth-Auction' },
-  { title: 'Skin Cancer Classification', desc: 'InceptionResNetV2 on HAM10000 with metadata fusion.', tags: ['PyTorch', 'InceptionResNetV2'], link: 'https://github.com/magnusaman/Skin-Cancer-Classification' },
-  { title: 'DmitliChess Extension', desc: 'AI commentary with three personas, 90-95% API reduction.', tags: ['JavaScript', 'Chrome Extensions'], link: 'https://github.com/magnusaman/dmitli-Chess.com' },
+  { title: 'Trader Arena', desc: '8 frontier LLMs trading US equities, crypto, and Indian options autonomously on $100K paper accounts.', tags: ['FastAPI', 'Next.js', 'PostgreSQL', 'LiteLLM'], link: 'https://trader.raeth.ai' },
+  { title: 'IPL Arena', desc: 'Opus 4.7 and GPT-5.5 wager on IPL cricket against the Stake odds feed in real time.', tags: ['FastAPI', 'Next.js', 'PostgreSQL', 'Docker'], link: 'https://ipl.raeth.ai' },
+  { title: 'Quant Arena', desc: 'Quant-strategy LLM arena I develop and maintain end-to-end.', tags: ['FastAPI', 'Next.js', 'PostgreSQL', 'Docker'], link: 'https://quantarena.raeth.ai' },
+  { title: 'Prediction Arena', desc: 'Forecasting arena where LLM agents make and settle real-world predictions.', tags: ['FastAPI', 'Next.js', 'Supabase', 'Docker'], link: 'https://prediction.raeth.ai' },
 ]
 
 const socials = [
@@ -204,17 +179,12 @@ export default function Home() {
     <div>
       {/* ── Hero ─────────────────────────────────── */}
       <motion.div
-        style={{
-          padding: '24px',
-          border: '1px solid var(--border)',
-          borderRadius: 12,
-          background: 'var(--card)',
-        }}
+        className="hero-card"
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 20 }}>
+        <div className="hero-row">
           {/* Avatar with camera button + lightbox */}
           <div style={{ position: 'relative', flexShrink: 0 }}>
             <motion.div
@@ -332,9 +302,9 @@ export default function Home() {
             )}
           </AnimatePresence>
 
-          <div style={{ flex: 1, minWidth: 0 }}>
+          <div className="hero-text" style={{ flex: 1, minWidth: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <h1 style={{ fontSize: 32, fontWeight: 700, margin: 0, fontFamily: 'var(--font-geist-sans), system-ui', letterSpacing: '-0.02em' }}>
+              <h1 className="hero-name">
                 Aman Anand
               </h1>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -353,13 +323,15 @@ export default function Home() {
             </div>
           </div>
 
-          <ViewCounter />
+          <div className="hero-views">
+            <ViewCounter />
+          </div>
         </div>
       </motion.div>
 
       {/* ── About ────────────────────────────────── */}
       <Section delay={0.05}>
-        <h2 style={headingStyle}>About</h2>
+        <h2 className="section-heading">About</h2>
         <ul style={{ listStyle: 'disc', paddingLeft: 20, color: 'var(--muted)', fontSize: 16, lineHeight: 1.8 }}>
           <li style={{ marginBottom: 12 }}>
             I&apos;m a 23-year-old engineer from Lucknow who got hooked on making machines see and trade.
@@ -368,12 +340,17 @@ export default function Home() {
           </li>
           <li style={{ marginBottom: 12 }}>
             Currently an AI Engineer at{' '}
-            <span style={{ color: 'var(--foreground)' }}>Raeth.ai</span>, building Alpha Arena — a
-            platform that puts frontier LLMs through real financial markets to see if they can actually
-            trade. On the research side, I work on scene text spotting with{' '}
+            <span style={{ color: 'var(--foreground)' }}>Raeth.ai</span>, where I build and run four
+            live LLM-agent arenas: Trader Arena, IPL Arena, Quant Arena, and Prediction Arena. They
+            put frontier models to work trading markets, betting on cricket, and forecasting events,
+            and I own the schedulers, infra, and stats behind them.
+          </li>
+          <li style={{ marginBottom: 12 }}>
+            On the research side I work on scene text spotting with{' '}
             <span style={{ color: 'var(--foreground)' }}>IIT Roorkee</span> and the{' '}
-            <span style={{ color: 'var(--foreground)' }}>University of Salford</span> — my paper
-            MEVL-STP was submitted to ECCV 2026.
+            <span style={{ color: 'var(--foreground)' }}>University of Salford</span>. I have three
+            papers so far: MEVL-STP (submitted to ECCV 2026) plus two accepted at ISPRS 2026, and
+            I&apos;m extending the text-spotting work to video.
           </li>
           <li>
             I like the messy middle ground between ML research and shipping products.
@@ -384,7 +361,7 @@ export default function Home() {
 
       {/* ── Connect ──────────────────────────────── */}
       <Section delay={0.1}>
-        <h2 style={headingStyle}>Connect</h2>
+        <h2 className="section-heading">Connect</h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
           {socials.map((s) => (
             <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" style={pillStyle}>
@@ -397,8 +374,8 @@ export default function Home() {
 
       {/* ── GitHub Activity ──────────────────────── */}
       <Section delay={0.15}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-          <h2 style={{ ...headingStyle, marginBottom: 0 }}>GitHub Activity</h2>
+        <div className="section-head-row">
+          <h2 className="section-heading" style={{ marginBottom: 0 }}>GitHub Activity</h2>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 15, color: 'var(--muted)' }}>
             <GithubIcon size={14} />
             <span style={{ fontFamily: 'var(--font-geist-mono)' }}>Coding right now</span>
@@ -409,7 +386,7 @@ export default function Home() {
 
       {/* ── Experience ───────────────────────────── */}
       <Section delay={0.2}>
-        <h2 style={headingStyle}>Experience</h2>
+        <h2 className="section-heading">Experience</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           {experience.map((exp, i) => (
             <div key={i} style={{ display: 'flex', gap: 16 }}>
@@ -438,7 +415,7 @@ export default function Home() {
 
       {/* ── Publications ─────────────────────────── */}
       <Section delay={0.25}>
-        <h2 style={headingStyle}>Publications</h2>
+        <h2 className="section-heading">Publications</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {publications.map((pub, i) => (
             <div key={i} style={cardStyle}>
@@ -452,6 +429,7 @@ export default function Home() {
                     ) : pub.title}
                   </h3>
                   <p style={{ fontSize: 14, color: 'var(--muted)', marginTop: 4, fontFamily: 'var(--font-geist-mono)' }}>{pub.venue}</p>
+                  <p style={{ fontSize: 14, color: 'var(--muted)', marginTop: 8, lineHeight: 1.6 }}>{pub.desc}</p>
                 </div>
                 <span style={{
                   ...tagStyle,
@@ -469,11 +447,11 @@ export default function Home() {
 
       {/* ── Projects ─────────────────────────────── */}
       <Section delay={0.3}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-          <h2 style={{ ...headingStyle, marginBottom: 0 }}>Projects</h2>
+        <div className="section-head-row">
+          <h2 className="section-heading" style={{ marginBottom: 0 }}>Projects</h2>
           <a href="/projects" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none', fontFamily: 'var(--font-geist-mono)' }}>View all →</a>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
+        <div className="projects-grid">
           {projects.map((p, i) => (
             <a key={i} href={p.link || '#'} target={p.link ? '_blank' : undefined} rel={p.link ? 'noopener noreferrer' : undefined} style={cardStyle}>
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
@@ -491,7 +469,7 @@ export default function Home() {
 
       {/* ── Education ────────────────────────────── */}
       <Section delay={0.35}>
-        <h2 style={headingStyle}>Education</h2>
+        <h2 className="section-heading">Education</h2>
         <div style={{ display: 'flex', gap: 16 }}>
           <div style={{ paddingTop: 6 }}>
             <div style={{ width: 10, height: 10, borderRadius: '50%', border: '2px solid var(--muted)', background: 'var(--border)' }} />
