@@ -138,13 +138,13 @@ const experience = [
     role: 'Research Intern',
     type: 'Research',
     period: '10.2025 – Present',
-    desc: 'Multi-encoder scene text spotting with VLM recognition. Authored MEVL-STP, submitted to ECCV 2026, and now extending the work to video text spotting (MEVL-VTS) for an IEEE Transactions submission.',
+    desc: 'Multi-encoder scene text spotting with VLM recognition. Authored MEVL-STP, submitted to CVPR 2027, and now extending the work to video text spotting (MEVL-VTS) for an IEEE Transactions submission.',
     tags: ['PyTorch', 'CLIP', 'DINOv2', 'Qwen3-VL', 'LoRA'],
   },
 ]
 
 const publications = [
-  { title: 'Multi-Encoder and VLM for Scene Text Spotting (MEVL-STP)', venue: 'ECCV 2026', status: 'Submitted', link: 'https://github.com/doubleblind-afk/MEVL-STP', desc: 'Combined 6 frozen vision encoders to find curved text in street images, then a LoRA-tuned Qwen3-VL-8B to read it. Beats prior SOTA on CTW1500 without synthetic data.' },
+  { title: 'Multi-Encoder and VLM for Scene Text Spotting (MEVL-STP)', venue: 'CVPR 2027', status: 'Submitted', link: 'https://github.com/doubleblind-afk/MEVL-STP', desc: 'Combined 6 frozen vision encoders to find curved text in street images, then a LoRA-tuned Qwen3-VL-8B to read it. Beats prior SOTA on CTW1500 without synthetic data.' },
   { title: 'Habitat Suitability Mapping using Satellite Imagery and CLI: A Case Study for New Brunswick, Canada', venue: 'ISPRS 2026', status: 'Accepted', desc: 'Combined Canada’s forest inventory with Sentinel-1/2 and Landsat, training MaxEnt and Random Forest models to predict where wildlife species can live across New Brunswick.' },
   { title: 'Advancing Wildfire Early Warning Systems: A Multisensor and Predictive Modeling Comparison Across Countries', venue: 'ISPRS 2026', status: 'Accepted', desc: 'Scored 15 countries on a 0–5 scale for wildfire early-warning maturity from satellite coverage and prediction models.' },
 ]
@@ -349,7 +349,7 @@ export default function Home() {
             On the research side I work on scene text spotting with{' '}
             <span style={{ color: 'var(--foreground)' }}>IIT Roorkee</span> and the{' '}
             <span style={{ color: 'var(--foreground)' }}>University of Salford</span>. I have three
-            papers so far: MEVL-STP (submitted to ECCV 2026) plus two accepted at ISPRS 2026, and
+            papers so far: MEVL-STP (submitted to CVPR 2027) plus two accepted at ISPRS 2026, and
             I&apos;m extending the text-spotting work to video.
           </li>
           <li>

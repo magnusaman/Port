@@ -8,7 +8,7 @@ const taglines = [
   'training models at 3am',
   'pip install coffee',
   "git commit -m 'trust me it works'",
-  'ECCV 2026',
+  'CVPR 2027',
   'building things that think',
   'LLMs > sleep',
 ]
