@@ -126,27 +126,47 @@ const avatars = ['/Avatar1.png', '/Avatar2.png', '/Avatar3.png']
 
 const experience = [
   {
+    company: 'Independent Research',
+    role: 'Indian-Script Scene Text Spotting',
+    type: 'Self-directed',
+    period: '09.2026 – Present',
+    desc: 'Designed AksharaSTR, a recogniser that reads one akshara (visual syllable) per step instead of Unicode codepoints. One 23M-parameter model reads 11 Indic scripts and English, and showed that a published 15-point Hindi–Marathi gap on BSTD came from data collection, not the script. It beats an identical codepoint-based model on all 11 scripts and, zero-shot, outperforms the IndicSTR12 in-domain models on all 11. It raises the best verified IIIT-ILST Hindi result from 56.8 to 63.2. With my own detector, the full system reads 50.9% of BSTD words end to end, against 36% for the published pipeline and 41% for Google OCR.',
+    tags: ['PyTorch', 'Scene Text Recognition', 'Indic Scripts'],
+  },
+  {
     company: 'Raeth.ai',
     role: 'AI Engineer',
     type: 'Full-time',
-    period: '03.2026 – Present',
-    desc: 'Building and operating Raeth’s live LLM-agent arenas. Built Trader Arena, a public benchmark running 8 frontier LLMs autonomously across US equities, crypto, and Indian options on $100K paper accounts each, and IPL Arena, where Opus 4.7 and GPT-5.5 wager on IPL cricket against the Stake odds feed in real time. I develop and maintain Quant Arena and Prediction Arena end-to-end alongside them, four live arenas spanning trading, sports betting, and forecasting, plus Auction Arena for LLM live bidding. Shared infra: event-driven schedulers with cost and error caps, LiteLLM prompt-cache routing that cut tokens 40%, bootstrap CIs and permutation tests.',
+    period: '03.2026 – 08.2026',
+    desc: 'Built Trader Arena, a live benchmark running 8 frontier LLMs autonomously on simulated US equity, crypto and Indian options portfolios, and IPL Arena, a real-time forecasting benchmark scoring LLM probability predictions against live reference odds. Extended it to Quant Arena and Prediction Arena, developed Auction Arena (a multi-agent live-bidding benchmark), and maintained four live evaluation platforms.',
     tags: ['FastAPI', 'Next.js', 'PostgreSQL', 'Supabase', 'LiteLLM', 'Docker', 'Azure'],
   },
   {
-    company: 'IIT Roorkee & University of Salford',
+    company: 'RGIPT & University of New Brunswick',
+    role: 'Undergraduate Researcher, Geospatial ML',
+    type: 'Research',
+    period: '11.2025 – 03.2026',
+    desc: 'With Dr. Susham Biswas and Ankit Sharma. Scored 15 countries on wildfire early-warning maturity from satellite coverage and predictive modelling (5.0/5 for high-income vs. 1.0–1.5/5 for low-income countries). Built MaxEnt and Random Forest models on Sentinel-1/2 and Landsat for wildlife habitat suitability in New Brunswick, and used AlphaEarth embeddings with Sentinel-2, Landsat thermal and LiDAR for forest degradation and wetland mapping. Outputs: one ISPRS Archives paper, one ISPRS Congress 2026 abstract and two preprints.',
+    tags: ['Sentinel', 'Landsat', 'MaxEnt', 'Random Forest', 'AlphaEarth'],
+  },
+  {
+    company: 'IIT (ISM) Dhanbad & University of Salford',
     role: 'Research Intern',
     type: 'Research',
     period: '10.2025 – Present',
-    desc: 'Multi-encoder scene text spotting with VLM recognition. Authored MEVL-STP, submitted to CVPR 2027, and now extending the work to video text spotting (MEVL-VTS) for an IEEE Transactions submission.',
-    tags: ['PyTorch', 'CLIP', 'DINOv2', 'Qwen3-VL', 'LoRA'],
+    desc: 'With Prof. Partha Pratim Roy and Prof. Palaiahnakote Shivakumara. MEVL-STP: six frozen vision encoders (CLIP, DINOv2, SigLIP, EVA-CLIP, SAM, ConvNeXt) fused through a trainable hierarchical feature pyramid, with a LoRA-tuned Qwen3-VL-8B for recognition. On CTW1500 it reaches 91.99% detection F-measure, 94.23% recognition accuracy and 85.86% end-to-end H-mean without synthetic pretraining (first-author, arXiv:2609.28857). Also extended Brain-IT (ICLR 2026) to five LAION-fMRI participants, fusing several people’s scans at test time in one forward pass without retraining, and removed an evaluation bias in brain-guided selection with cross-fitting.',
+    tags: ['PyTorch', 'CLIP', 'DINOv2', 'Qwen3-VL', 'LoRA', 'fMRI'],
   },
 ]
 
 const publications = [
-  { title: 'Multi-Encoder and VLM for Scene Text Spotting (MEVL-STP)', venue: 'CVPR 2027', status: 'Submitted', link: 'https://github.com/doubleblind-afk/MEVL-STP', desc: 'Combined 6 frozen vision encoders to find curved text in street images, then a LoRA-tuned Qwen3-VL-8B to read it. Beats prior SOTA on CTW1500 without synthetic data.' },
-  { title: 'Habitat Suitability Mapping using Satellite Imagery and CLI: A Case Study for New Brunswick, Canada', venue: 'ISPRS 2026', status: 'Accepted', desc: 'Combined Canada’s forest inventory with Sentinel-1/2 and Landsat, training MaxEnt and Random Forest models to predict where wildlife species can live across New Brunswick.' },
-  { title: 'Advancing Wildfire Early Warning Systems: A Multisensor and Predictive Modeling Comparison Across Countries', venue: 'ISPRS 2026', status: 'Accepted', desc: 'Scored 15 countries on a 0–5 scale for wildfire early-warning maturity from satellite coverage and prediction models.' },
+  { title: 'MEVL-STP: Multi-Encoder and Vision Language Model for Arbitrarily Shaped Scene Text Spotting', venue: 'arXiv:2609.28857 · CVPR 2027', status: 'Preprint', link: 'https://arxiv.org/abs/2609.28857', desc: 'Six frozen vision encoders fused through a trainable feature pyramid to find curved text, then a LoRA-tuned Qwen3-VL-8B to read it. New state of the art on CTW1500 without synthetic pretraining. First author.' },
+  { title: 'Wildfire Early Warning Systems: A Multisensor and Predictive Modelling Comparison Across Countries with a Canadian Perspective', venue: 'ISPRS Archives XLIX-M-1-2026', status: 'Published', desc: 'Scored 15 countries on wildfire early-warning maturity from satellite coverage and predictive modelling. Peer-reviewed.' },
+  { title: 'Habitat Suitability Mapping Using Satellite Imagery and Continuous Landscape Inventory (CLI): A Case Study for New Brunswick, Canada', venue: 'ISPRS Congress 2026 / 47th CSRS, Toronto', status: 'Presented', desc: 'Conference abstract. Combined Canada’s forest inventory with Sentinel-1/2 and Landsat, training MaxEnt and Random Forest models to predict wildlife habitat.' },
+  { title: 'AksharaSTR: Akshara-Level Scene Text Spotting for Indic Scripts (working title)', venue: 'In preparation for CVPR 2027', status: 'In prep.', desc: 'Akshara-level recogniser covering 11 Indic scripts and English in one 23M-parameter model.' },
+  { title: 'Multi-Subject Fusion for fMRI Image Reconstruction (working title)', venue: 'In preparation for CVPR 2027', status: 'In prep.', desc: 'Test-time fusion of several participants’ fMRI scans for image reconstruction, without retraining.' },
+  { title: 'Label-Free Detection of Hidden Forest Degradation Using Sentinel-2, Landsat Thermal Stress and AlphaEarth Embeddings', venue: 'Preprints.org 2026 · not peer reviewed', status: 'Preprint', desc: 'Co-author, with Sharma, Kashyap, Mishra, Zhang and Biswas.' },
+  { title: 'Wetland Mapping Under Boundary Uncertainty with AlphaEarth Embeddings, LiDAR and Sentinel', venue: 'Preprints.org 2026 · not peer reviewed', status: 'Preprint', desc: 'Co-author, with Sharma, Kharbanda, Mishra, Zhang and Biswas.' },
 ]
 
 const projects = [
@@ -159,7 +179,7 @@ const projects = [
 const socials = [
   { label: 'GitHub', href: 'https://github.com/magnusaman', icon: <GithubIcon size={15} /> },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/aman7anand', icon: <LinkedinIcon size={15} /> },
-  { label: 'Mail', href: 'mailto:amanformal7@gmail.com', icon: <Mail size={15} /> },
+  { label: 'Mail', href: 'mailto:amananand7080@gmail.com', icon: <Mail size={15} /> },
   { label: 'Resume', href: 'https://drive.google.com/file/d/16hfHLyOAzWeFT3Gw1zOR46I03bYQ_CGx/view?usp=drive_link', icon: <FileText size={15} /> },
 ]
 
@@ -334,23 +354,27 @@ export default function Home() {
         <h2 className="section-heading">About</h2>
         <ul style={{ listStyle: 'disc', paddingLeft: 20, color: 'var(--muted)', fontSize: 16, lineHeight: 1.8 }}>
           <li style={{ marginBottom: 12 }}>
-            I&apos;m a 23-year-old engineer from Lucknow who got hooked on making machines see and trade.
-            Graduated from <span style={{ color: 'var(--foreground)' }}>RGIPT</span>{' '}with a B.Tech in IT,
+            I&apos;m a 23-year-old engineer from Lucknow who got hooked on making machines see.
+            Finished a B.Tech in IT at <span style={{ color: 'var(--foreground)' }}>RGIPT</span>{' '}
             and haven&apos;t stopped building since.
           </li>
           <li style={{ marginBottom: 12 }}>
-            Currently an AI Engineer at{' '}
-            <span style={{ color: 'var(--foreground)' }}>Raeth.ai</span>, where I build and run four
-            live LLM-agent arenas: Trader Arena, IPL Arena, Quant Arena, and Prediction Arena. They
-            put frontier models to work trading markets, betting on cricket, and forecasting events,
-            and I own the schedulers, infra, and stats behind them.
+            My research is on computer vision and vision-language models: combining pretrained
+            models and noisy data sources reliably, and evaluating them honestly. Applications so
+            far are scene text in low-resource scripts, brain decoding (fMRI), and remote sensing.
           </li>
           <li style={{ marginBottom: 12 }}>
-            On the research side I work on scene text spotting with{' '}
-            <span style={{ color: 'var(--foreground)' }}>IIT Roorkee</span> and the{' '}
-            <span style={{ color: 'var(--foreground)' }}>University of Salford</span>. I have three
-            papers so far: MEVL-STP (submitted to CVPR 2027) plus two accepted at ISPRS 2026, and
-            I&apos;m extending the text-spotting work to video.
+            I work with{' '}
+            <span style={{ color: 'var(--foreground)' }}>Prof. Partha Pratim Roy</span> (IIT (ISM) Dhanbad)
+            and <span style={{ color: 'var(--foreground)' }}>Prof. Palaiahnakote Shivakumara</span>{' '}
+            (University of Salford). MEVL-STP is on arXiv and targeting CVPR 2027, and I&apos;m
+            building AksharaSTR for Indic-script text spotting. I also have an ISPRS Archives paper
+            and have reviewed for <span style={{ color: 'var(--foreground)' }}>Pattern Recognition</span>.
+          </li>
+          <li style={{ marginBottom: 12 }}>
+            Before this I was an AI Engineer at{' '}
+            <span style={{ color: 'var(--foreground)' }}>Raeth.ai</span> (Mar–Aug 2026), where I built
+            Trader Arena and IPL Arena and maintained four live LLM evaluation platforms.
           </li>
           <li>
             I like the messy middle ground between ML research and shipping products.
@@ -435,7 +459,7 @@ export default function Home() {
                   ...tagStyle,
                   fontSize: 13,
                   flexShrink: 0,
-                  ...(pub.status === 'Accepted' ? { background: 'rgba(34,197,94,0.1)', color: '#22c55e', borderColor: 'rgba(34,197,94,0.2)' } : {}),
+                  ...(['Accepted', 'Published', 'Presented'].includes(pub.status) ? { background: 'rgba(34,197,94,0.1)', color: '#22c55e', borderColor: 'rgba(34,197,94,0.2)' } : {}),
                 }}>
                   {pub.status}
                 </span>
@@ -481,12 +505,21 @@ export default function Home() {
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 3, flexWrap: 'wrap' }}>
               <span style={{ fontSize: 15, color: 'var(--muted)' }}>B.Tech in Information Technology</span>
               <span style={{ fontSize: 14, color: 'var(--muted)' }}>·</span>
-              <span style={{ fontSize: 14, color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>CPI: 7.76/10</span>
+              <span style={{ fontSize: 14, color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>CPI: 7.69/10</span>
               <span style={{ fontSize: 14, color: 'var(--muted)' }}>·</span>
-              <span style={{ fontSize: 14, color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>2022 – 2026</span>
+              <span style={{ fontSize: 14, color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>11.2022 – 01.2026</span>
             </div>
           </div>
         </div>
+      </Section>
+
+      {/* ── Reviewing & Conferences ──────────────── */}
+      <Section delay={0.38}>
+        <h2 className="section-heading">Reviewing &amp; Conferences</h2>
+        <ul style={{ listStyle: 'disc', paddingLeft: 20, color: 'var(--muted)', fontSize: 16, lineHeight: 1.8 }}>
+          <li>Reviewer for <span style={{ color: 'var(--foreground)' }}>Pattern Recognition</span> (Elsevier): 2 manuscripts, invited directly by the journal (2026)</li>
+          <li>Attended the <span style={{ color: 'var(--foreground)' }}>European Conference on Computer Vision (ECCV 2026)</span>, Malmö, Sweden (Sep 2026)</li>
+        </ul>
       </Section>
 
       {/* ── Footer ───────────────────────────────── */}
