@@ -160,7 +160,7 @@ const experience = [
 ]
 
 const publications = [
-  { title: 'MEVL-STP: Multi-Encoder and Vision Language Model for Arbitrarily Shaped Scene Text Spotting', venue: 'arXiv:2609.28857 · CVPR 2027', status: 'Preprint', link: 'https://arxiv.org/abs/2609.28857', desc: 'Six frozen vision encoders fused through a trainable feature pyramid to find curved text, then a LoRA-tuned Qwen3-VL-8B to read it. New state of the art on CTW1500 without synthetic pretraining. First author.' },
+  { title: 'MEVL-STP: Multi-Encoder and Vision Language Model for Arbitrarily Shaped Scene Text Spotting', venue: 'CVPR 2027 · arXiv:2609.28857', status: 'Submitted', link: 'https://arxiv.org/abs/2609.28857', desc: 'Six frozen vision encoders fused through a trainable feature pyramid to find curved text, then a LoRA-tuned Qwen3-VL-8B to read it. New state of the art on CTW1500 without synthetic pretraining. First author.' },
   { title: 'Wildfire Early Warning Systems: A Multisensor and Predictive Modelling Comparison Across Countries with a Canadian Perspective', venue: 'ISPRS Archives XLIX-M-1-2026', status: 'Published', desc: 'Scored 15 countries on wildfire early-warning maturity from satellite coverage and predictive modelling. Peer-reviewed.' },
   { title: 'Habitat Suitability Mapping Using Satellite Imagery and Continuous Landscape Inventory (CLI): A Case Study for New Brunswick, Canada', venue: 'ISPRS Congress 2026 / 47th CSRS, Toronto', status: 'Presented', desc: 'Conference abstract. Combined Canada’s forest inventory with Sentinel-1/2 and Landsat, training MaxEnt and Random Forest models to predict wildlife habitat.' },
   { title: 'AksharaSTR: Akshara-Level Scene Text Spotting for Indic Scripts (working title)', venue: 'In preparation for CVPR 2027', status: 'In prep.', desc: 'Akshara-level recogniser covering 11 Indic scripts and English in one 23M-parameter model.' },
@@ -180,6 +180,7 @@ const socials = [
   { label: 'GitHub', href: 'https://github.com/magnusaman', icon: <GithubIcon size={15} /> },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/aman7anand', icon: <LinkedinIcon size={15} /> },
   { label: 'Mail', href: 'mailto:amananand7080@gmail.com', icon: <Mail size={15} /> },
+  { label: 'Scholar', href: 'https://scholar.google.com/citations?user=80Gc9PYAAAAJ', icon: <FileText size={15} /> },
   { label: 'Resume', href: 'https://drive.google.com/file/d/16hfHLyOAzWeFT3Gw1zOR46I03bYQ_CGx/view?usp=drive_link', icon: <FileText size={15} /> },
 ]
 
@@ -367,7 +368,7 @@ export default function Home() {
             I work with{' '}
             <span style={{ color: 'var(--foreground)' }}>Prof. Partha Pratim Roy</span> (IIT (ISM) Dhanbad)
             and <span style={{ color: 'var(--foreground)' }}>Prof. Palaiahnakote Shivakumara</span>{' '}
-            (University of Salford). MEVL-STP is on arXiv and targeting CVPR 2027, and I&apos;m
+            (University of Salford). MEVL-STP is on arXiv and submitted to CVPR 2027, and I&apos;m
             building AksharaSTR for Indic-script text spotting. I also have an ISPRS Archives paper
             and have reviewed for <span style={{ color: 'var(--foreground)' }}>Pattern Recognition</span>.
           </li>
